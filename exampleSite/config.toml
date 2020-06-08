@@ -1,7 +1,7 @@
 baseURL = "https://patdujour.tech"
 languageCode = "en-us"
 summaryLength = "10"
-theme = "PatDuJour"
+theme = "PatDuJour Hugo"
 title = "Patrick Zhang"
 [[menu.main]]
 URL = "about"
