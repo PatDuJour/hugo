@@ -57,5 +57,8 @@ icon = "ti-linkedin"
 URL = "https://stackoverflow.com/story/patrickzhang"
 icon = "ti-stack-overflow"
 [[params.social]]
+URL = "https://sourcerer.io/patdujour"
+icon = "ti-bar-chart"
+[[params.social]]
 URL = "#"
 icon = "ti-instagram"
