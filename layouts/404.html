@@ -1,32 +1,143 @@
 {{ define "main" }}
-
-  {{ .Scratch.Set "contact" false }}
-
-  <section class="hero-area">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-lg-11 mx-auto text-center">
-          <h1 class="text-black font-tertiary">
-            404
-          </h1>
-          <h3 class="text-black font-tertiary">
-            Rainy days should be spent at home with a cup of tea and a good book.
-          </h3>
-          <h5 class="text-black font-tertiary text-right">
-            - Bill Watterson
-          </h5>
-        </div>
+  <section class="hero-area position-absolute min-vw-100 h-100">
+    <div class="container row h-100 mx-auto">
+      <div class="col-lg-12 mx-auto my-auto text-center">
+        <h1 class="text-white font-tertiary">
+          404
+        </h1>
+        <h3 class="text-white font-tertiary">
+          Rainy days should be spent at home with a cup of tea and a good book.
+        </h3>
+        <h5 class="text-white font-tertiary text-right">
+          - Bill Watterson
+        </h5>
       </div>
-      <div class="row">
-        <div class="col-lg-11 mx-auto text-center">
-          <a href="{{ "/" | relURL }}"
-            class="btn btn-info btn-lg active"
-            role="button" aria-pressed="true">
-            Home
-          </a>
-        </div>
+      <div class="col-lg-11 mx-auto text-center">
+        <a href="{{ "/" | relURL }}"
+          class="btn btn-info btn-lg active"
+          role="button" aria-pressed="true">
+          Home
+        </a>
       </div>
     </div>
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
+  <script>
+    let scene,camera, renderer, cloudParticles = [], flash, rain, rainGeo, rainCount = 5000;
+    function init() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight, 1, 1000);
+      camera.position.z = 1;
+      camera.rotation.x = 1.16;
+      camera.rotation.y = -0.12;
+      camera.rotation.z = 0.27;
+      ambient = new THREE.AmbientLight(0x666666);
+      scene.add(ambient);
+      directionalLight = new THREE.DirectionalLight(0xffeedd);
+      directionalLight.position.set(0,0,1);
+      scene.add(directionalLight);
+      flash = new THREE.PointLight(0x062d89, 30, 500 ,1.7);
+      flash.position.set(200, 300, 100);
+      scene.add(flash);
+      renderer = new THREE.WebGLRenderer();
+      scene.fog = new THREE.FogExp2(0x222233, 0.002);
+      renderer.setClearColor(scene.fog.color);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      rainGeo = new THREE.Geometry();
+      for(let i=0;i<rainCount;i++) {
+        let tmp =  Math.random() * 400 -200;
+        let tmp2 =  Math.random() * 400 -300;
+        rainDrop = new THREE.Vector3(
+          tmp,
+          Math.random() * 500 - 250,
+          tmp2
+        );
+        rainDrop.originalX = tmp;
+        rainDrop.originalZ = tmp2;
+        rainDrop.velocity = {};
+        rainDrop.velocity = 0;
+        rainGeo.vertices.push(rainDrop);
+      }
+      let loader = new THREE.TextureLoader();
+      rainMaterial = new THREE.PointsMaterial({
+        color: 0xaaaaaa,
+        size: 1.2,
+        map: loader.load(
+        "/images/illustrations/rain-drop.png"
+        ),
+        depthTest: false,
+        blending: THREE.AdditiveBlending,
+        opacity:1,
+        transparent: true
+      });
+      rain = new THREE.Points(rainGeo,rainMaterial);
+      scene.add(rain);
+      loader.load("/images/illustrations/smoke.png", function(texture){
+        cloudGeo = new THREE.PlaneBufferGeometry(400, 400);
+        cloudMaterial = new THREE.MeshLambertMaterial({
+          map: texture,
+          transparent: true
+        });
+        for(let p = 0; p < 35; p++) {
+          let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
+          cloud.position.set(
+            Math.random() * 800 - 400,
+            500,
+            Math.random() * 500 - 450
+          );
+          cloud.rotation.x = 1.16;
+          cloud.rotation.y = -0.12;
+          cloud.rotation.z = Math.random() * 360;
+          cloud.material.opacity = 0.6;
+          cloudParticles.push(cloud);
+          scene.add(cloud);
+        }
+        animate();
+      });
+    }
+    function animate() {
+      cloudParticles.forEach(p => {
+        p.rotation.z -=0.001;
+      });
+      rainGeo.vertices.forEach(p => {
+        p.velocity -= Math.random() * 0.1;
+        if(p.originalZ < 10 && p.originalZ >-50)
+        p.y += p.velocity/2;
+        else
+        p.y += p.velocity;
+        if (p.y < -200) {
+        p.y = 200;
+        p.velocity = 0;
+        }
+        if(p.originalZ < 10 && p.originalZ >-50 && p.originalX < 30 && p.originalX >-30) {
+        if(p.x < 0)
+        p.x -= 0.2;
+        else
+        p.x += 0.2;
+        }
+        if(p.originalZ < 10 && p.originalZ >-50) {
+        if(p.x > 30) p.x = p.originalX;
+        else if (p.x < -30) p.x = p.originalX;
+        }
+      });
+      rainGeo.verticesNeedUpdate = true;
+      if(Math.random() > 0.93 || flash.power > 100) {
+        if(flash.power < 100)
+          flash.position.set(
+            Math.random() * 400,
+            300 + Math.random() * 200,
+            100
+          );
+        flash.power = 50 + Math.random() * 500;
+      }
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    init();
+  </script>
 
+{{ end }}
+
+{{ define "footer" }}
 {{ end }}
