@@ -20,8 +20,8 @@ URL = "contact"
 name = "Contact"
 weight = 4
 [params]
-address = "125/A, CA Commercial Area, California, USA"
-author = "Johnathan Smith"
+address = ""
+author = "Patrick Zhang"
 copyright = ""
 description = "This is meta description"
 email = "patrick@patdujour.tech"
