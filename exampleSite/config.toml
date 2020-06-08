@@ -4,6 +4,10 @@ summaryLength = "10"
 theme = "PatDuJour Hugo"
 title = "Patrick Zhang"
 [[menu.main]]
+name = "Viola"
+url = "https://violafu.design"
+weight = 3
+[[menu.main]]
 URL = "blog"
 name = "Blog"
 weight = 1
