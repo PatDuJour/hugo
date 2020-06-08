@@ -4,13 +4,21 @@ summaryLength = "10"
 theme = "PatDuJour Hugo"
 title = "Patrick Zhang"
 [[menu.main]]
-URL = "blog"
-name = "Blog"
-weight = 1
-[[menu.main]]
 URL = "about"
 name = "About"
+weight = 1
+[[menu.main]]
+URL = "blog"
+name = "Blog"
 weight = 2
+[[menu.main]]
+URL = "portfolio"
+name = "Portfolio"
+weight = 3
+[[menu.main]]
+URL = "contact"
+name = "Contact"
+weight = 4
 [params]
 address = "125/A, CA Commercial Area, California, USA"
 author = "Johnathan Smith"
@@ -43,14 +51,8 @@ URL = "plugins/shuffle/shuffle.min.js"
 enable = true
 preloader = ""
 [[params.social]]
-URL = "#"
-icon = "ti-facebook"
+URL = "https://stackoverflow.com/story/patrickzhang"
+icon = "ti-stack-overflow"
 [[params.social]]
 URL = "#"
 icon = "ti-instagram"
-[[params.social]]
-URL = "#"
-icon = "ti-dribbble"
-[[params.social]]
-URL = "#"
-icon = "ti-twitter-alt"
