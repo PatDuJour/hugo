@@ -1,8 +1,8 @@
 baseURL = "https://patdujour.tech"
 languageCode = "en-us"
 summaryLength = "10"
-theme = "kross-hugo"
-title = "Kross | Hugo Portfolio Template"
+theme = "PatDuJour"
+title = "Patrick Zhang"
 [[menu.main]]
 URL = "about"
 name = "About"
