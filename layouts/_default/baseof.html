@@ -4,7 +4,12 @@
     <body>
         {{- partial "preloader.html" . -}}
         {{- partial "header.html" . -}}
-        {{- block "main" . }}{{- end }}
-        {{- partial "footer.html" . -}}
+        <div class="block-main">
+            {{ block "main" . }}{{ end }}
+        </div>
+        <div class="block-footer">
+            {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+        </div>
+        {{ partial "injects" . }}
     </body>
 </html>
