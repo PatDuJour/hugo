@@ -22,13 +22,13 @@ weight = 4
 [params]
 address = "125/A, CA Commercial Area, California, USA"
 author = "Johnathan Smith"
-copyright = "Copyright &copy; 2020 a theme by [gethugothemes](https://gethugothemes.com)"
+copyright = ""
 description = "This is meta description"
-email = "steve.fruits@email.com"
+email = "patrick@patdujour.tech"
 google_analytics_id = ""
 home = "Home"
 logo = "images/logo.png"
-phone = "+880 2544 658 256"
+phone = "+1 949 520 2066"
 theme_color = "#41228e"
 [params.contact]
 enable = true
@@ -51,6 +51,9 @@ URL = "plugins/shuffle/shuffle.min.js"
 enable = true
 preloader = ""
 [[params.social]]
+URL = "#"
+icon = "ti-instagram"
+[[params.social]]
 URL = "https://www.linkedin.com/in/patzhang/"
 icon = "ti-linkedin"
 [[params.social]]
@@ -59,6 +62,3 @@ icon = "ti-stack-overflow"
 [[params.social]]
 URL = "https://sourcerer.io/patdujour"
 icon = "ti-bar-chart"
-[[params.social]]
-URL = "#"
-icon = "ti-instagram"
