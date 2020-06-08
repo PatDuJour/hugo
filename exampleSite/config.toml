@@ -1,4 +1,4 @@
-baseURL = "https://patdujour.netlify.app"
+baseURL = "https://patdujour.tech"
 languageCode = "en-us"
 summaryLength = "10"
 theme = "PatDuJour Hugo"
