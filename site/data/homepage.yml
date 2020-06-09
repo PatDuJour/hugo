@@ -29,7 +29,7 @@ skill:
     progress: 70%
     color: "#ffbcaa"
 experience:
-  enable: true
+  enable: false
   title: Experience
   item:
   - logo: images/experience/icon-1.png
@@ -55,7 +55,7 @@ education:
     year: "2016"
     academy: University of California, Irvine
 service:
-  enable: true
+  enable: false
   title: Services
   item:
   - title: UI Design
