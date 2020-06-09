@@ -22,6 +22,7 @@ home = "Home"
 logo = "images/logo.png"
 phone = "+1 949 520 2066"
 theme_color = "#41228e"
+secondary_color = ""
 [params.contact]
 enable = true
 form_action = "#"
