@@ -1,0 +1,59 @@
+baseURL = "https://patdujour.tech"
+languageCode = "en-us"
+summaryLength = "10"
+theme = "PatDuJour Hugo"
+title = "Patrick Zhang"
+[[menu.main]]
+URL = "about"
+name = "About"
+weight = 1
+[[menu.main]]
+URL = "blog"
+name = "Blog"
+weight = 2
+[params]
+address = ""
+author = "Patrick Zhang"
+copyright = ""
+description = "This is meta description"
+email = "patrick@patdujour.tech"
+google_analytics_id = ""
+home = "Home"
+logo = "images/logo.png"
+phone = "+1 949 520 2066"
+theme_color = "#41228e"
+[params.contact]
+enable = true
+form_action = "#"
+[[params.plugins.css]]
+URL = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+[[params.plugins.js]]
+URL = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+URL = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+[[params.plugins.js]]
+URL = "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+
+[[params.plugins.css]]
+URL = "plugins/slick/slick.css"
+[[params.plugins.css]]
+URL = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.js]]
+URL = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+URL = "plugins/shuffle/shuffle.min.js"
+[params.preloader]
+enable = true
+preloader = ""
+[[params.social]]
+URL = "https://www.linkedin.com/in/patzhang/"
+icon = "ti-linkedin"
+[[params.social]]
+URL = "https://stackoverflow.com/story/patrickzhang"
+icon = "ti-stack-overflow"
+[[params.social]]
+URL = "https://github.com/PatDuJour"
+icon = "ti-github"
+[[params.social]]
+URL = "https://sourcerer.io/patdujour"
+icon = "ti-bar-chart"
