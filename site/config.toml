@@ -21,24 +21,23 @@ google_analytics_id = ""
 home = "Home"
 logo = "images/logo.png"
 phone = "+1 949 520 2066"
-theme_color = "#41228e"
 secondary_color = ""
+theme_color = ""
 [params.contact]
 enable = true
 form_action = "#"
 [[params.plugins.css]]
 URL = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+[[params.plugins.css]]
+URL = "plugins/slick/slick.css"
+[[params.plugins.css]]
+URL = "plugins/themify-icons/themify-icons.css"
 [[params.plugins.js]]
 URL = "plugins/jQuery/jquery.min.js"
 [[params.plugins.js]]
 URL = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 [[params.plugins.js]]
 URL = "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-
-[[params.plugins.css]]
-URL = "plugins/slick/slick.css"
-[[params.plugins.css]]
-URL = "plugins/themify-icons/themify-icons.css"
 [[params.plugins.js]]
 URL = "plugins/slick/slick.min.js"
 [[params.plugins.js]]
