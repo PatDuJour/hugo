@@ -54,12 +54,6 @@ education:
   - title: B.S in Computer Science
     year: "2016"
     academy: University of California, Irvine
-  - title: Higher Secondary Certificat
-    year: "2000"
-    academy: Cardiff School
-  - title: Secondary School Certificate
-    year: "1998"
-    academy: Cardiff School
 service:
   enable: true
   title: Services
