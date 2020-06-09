@@ -48,9 +48,9 @@ education:
   enable: true
   title: Education & Certification
   item:
-  - title: Marters in UX Design
-    year: "2006"
-    academy: Masassusets Institute of Technology
+  - title: 'Machine Learning: Implementation in Business'
+    year: "2019"
+    academy: MIT Sloan School of Management
   - title: Honours in Fine Arts
     year: "2004"
     academy: Harvard University
